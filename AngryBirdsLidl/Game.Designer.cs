@@ -1,0 +1,112 @@
+﻿namespace AngryBirdsLidl
+{
+    partial class Game
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            resetButton = new Button();
+            startButton = new Button();
+            stopButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1375, 881);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Paint += pictureBox1_Paint;
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1.MouseUp += pictureBox1_MouseUp;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 16;
+            timer1.Tick += timer1_Tick;
+            // 
+            // resetButton
+            // 
+            resetButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            resetButton.Location = new Point(248, 899);
+            resetButton.Name = "resetButton";
+            resetButton.Size = new Size(112, 34);
+            resetButton.TabIndex = 1;
+            resetButton.Text = "Reset";
+            resetButton.UseVisualStyleBackColor = true;
+            resetButton.Click += resetButton_Click;
+            // 
+            // startButton
+            // 
+            startButton.Location = new Point(12, 899);
+            startButton.Name = "startButton";
+            startButton.Size = new Size(112, 34);
+            startButton.TabIndex = 2;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = true;
+            startButton.Click += startButton_Click;
+            // 
+            // stopButton
+            // 
+            stopButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            stopButton.Location = new Point(130, 899);
+            stopButton.Name = "stopButton";
+            stopButton.Size = new Size(112, 34);
+            stopButton.TabIndex = 3;
+            stopButton.Text = "Stop";
+            stopButton.UseVisualStyleBackColor = true;
+            stopButton.Click += stopButton_Click;
+            // 
+            // Game
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1399, 945);
+            Controls.Add(stopButton);
+            Controls.Add(startButton);
+            Controls.Add(resetButton);
+            Controls.Add(pictureBox1);
+            Name = "Game";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private Button resetButton;
+        private Button startButton;
+        private Button stopButton;
+    }
+}
