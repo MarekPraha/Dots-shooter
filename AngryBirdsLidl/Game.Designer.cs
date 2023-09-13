@@ -34,6 +34,8 @@
             resetButton = new Button();
             startButton = new Button();
             stopButton = new Button();
+            timer2 = new System.Windows.Forms.Timer(components);
+            friendlyFirecheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             pictureBox1.Paint += pictureBox1_Paint;
             pictureBox1.MouseDown += pictureBox1_MouseDown;
             pictureBox1.MouseUp += pictureBox1_MouseUp;
+            pictureBox1.Resize += pictureBox1_Resize;
             // 
             // timer1
             // 
@@ -67,6 +70,7 @@
             // 
             // startButton
             // 
+            startButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             startButton.Location = new Point(12, 899);
             startButton.Name = "startButton";
             startButton.Size = new Size(112, 34);
@@ -86,11 +90,32 @@
             stopButton.UseVisualStyleBackColor = true;
             stopButton.Click += stopButton_Click;
             // 
+            // timer2
+            // 
+            timer2.Enabled = true;
+            timer2.Interval = 1;
+            timer2.Tick += timer2_Tick;
+            // 
+            // friendlyFirecheckBox
+            // 
+            friendlyFirecheckBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            friendlyFirecheckBox.AutoSize = true;
+            friendlyFirecheckBox.Checked = true;
+            friendlyFirecheckBox.CheckState = CheckState.Checked;
+            friendlyFirecheckBox.Location = new Point(1259, 904);
+            friendlyFirecheckBox.Name = "friendlyFirecheckBox";
+            friendlyFirecheckBox.Size = new Size(128, 29);
+            friendlyFirecheckBox.TabIndex = 4;
+            friendlyFirecheckBox.Text = "FriendlyFire";
+            friendlyFirecheckBox.UseVisualStyleBackColor = true;
+            friendlyFirecheckBox.CheckedChanged += friendlyFirecheckBox_CheckedChanged;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 945);
+            Controls.Add(friendlyFirecheckBox);
             Controls.Add(stopButton);
             Controls.Add(startButton);
             Controls.Add(resetButton);
@@ -99,6 +124,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -108,5 +134,7 @@
         private Button resetButton;
         private Button startButton;
         private Button stopButton;
+        private System.Windows.Forms.Timer timer2;
+        private CheckBox friendlyFirecheckBox;
     }
 }

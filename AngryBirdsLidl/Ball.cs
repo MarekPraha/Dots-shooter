@@ -19,6 +19,9 @@ namespace AngryBirdsLidl
         public Brush brush { get; set; }
         public GameLogic GameLogic { get; set; }
 
+        public bool IsAlive { get; set; } = true;
+
+        public bool Type { get; set; } = true;
 
         public Ball(GameLogic gameLogic)
         {
@@ -34,27 +37,37 @@ namespace AngryBirdsLidl
                           this.Size);
         }
 
-        public void Move()
+        public async Task Move()
         {
             this.X += this.VectorX;
             this.Y += this.VectorY;
 
-                if (this.X < 0)
-                {
-                    this.VectorX = -this.VectorX;
-                }
-                if (this.Y < 0)
-                {
-                    this.VectorY = -this.VectorY;
-                }
-                if (this.X > this.GameLogic.Width)
-                {
-                    this.VectorX = -this.VectorX;
-                }
-                if (this.Y > this.GameLogic.Height)
-                {
-                    this.VectorY = -this.VectorY;
-                }
+            //no clipping into walls
+            if (
+                this.X + this.VectorX < 0 + this.Size ||
+                this.X + this.VectorX > this.GameLogic.Width - this.Size
+                )
+            {
+                this.VectorX = -this.VectorX;
+            }          
+            if (
+                this.Y + this.VectorY < 0 + this.Size ||
+                this.Y + this.VectorY > this.GameLogic.Height - this.Size
+                )
+            {
+                this.VectorY = -this.VectorY;
+            }
+        }
+
+        public RectangleF GetBoundingBox()
+        {
+            if (IsAlive)
+            {
+                return new RectangleF((float)this.X, (float)this.Y, this.Size, this.Size);
+            }
+            return RectangleF.Empty;
+
+
         }
     }
 }

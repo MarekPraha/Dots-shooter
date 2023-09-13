@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ namespace AngryBirdsLidl
     {
         private List<Ball> balls = new List<Ball>();
 
-        Random random = new Random();
+        private Random random = new Random();
 
         public int Width { get; set; }
         public int Height { get; set; }
+
+        public bool friendlyFire { get; set; } = true;
 
         public GameLogic(int Width, int Height)
         {
@@ -24,25 +27,33 @@ namespace AngryBirdsLidl
         }
         public async void DrawUpdate(Graphics g)
         {
+            //taks to speed up drawing
             List<Task> toDraw = new List<Task>();
             foreach (var item in balls)
             {
                 toDraw.Add(item.Draw(g));
             }
-            await Task.WhenAll(toDraw);
+            Task.WhenAll(toDraw);
         }
 
-        public void Move()
+        public async void Move()
         {
+            Task.Run(() => CheckColisions());
+
+            List<Task> toMove = new List<Task>();
             foreach (var item in balls)
             {
-                item.Move();
+                if (item.IsAlive)
+                {
+                    toMove.Add(item.Move()); 
+                } 
             }
+            Task.WhenAll(toMove);
         }
 
         public void Reset()
         {
-            balls.Clear();
+            this.balls.Clear();
             Init();
         }
 
@@ -70,8 +81,35 @@ namespace AngryBirdsLidl
                 Y = y,
                 VectorX = vectorX,
                 VectorY = vectorY,
-                brush = Brushes.Black       
+                brush = Brushes.Black,
+                Type = false
             });
+        }
+
+        private async Task CheckColisions()
+        {
+            foreach (var BallToCheck in balls)
+            {
+                RectangleF ball1 = BallToCheck.GetBoundingBox();
+                foreach (var BallToCheckAgainst in balls)
+                {
+                    if (BallToCheck == BallToCheckAgainst)
+                    {
+                        continue;
+                    }
+                    if (!BallToCheckAgainst.Type && !this.friendlyFire)
+                    {
+                        continue;
+                    }
+                    RectangleF ball2 = BallToCheckAgainst.GetBoundingBox();
+
+                    if (ball1.IntersectsWith(ball2))
+                    {
+                        BallToCheck.IsAlive = false;
+                        BallToCheckAgainst.IsAlive = false;
+                    }
+                }
+            }
         }
     }
 }
