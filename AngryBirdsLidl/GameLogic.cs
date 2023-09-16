@@ -18,6 +18,8 @@ namespace AngryBirdsLidl
 
         public bool friendlyFire { get; set; } = true;
 
+        public bool deleteAfterCollision { get; set; } = true;
+
         public GameLogic(int Width, int Height)
         {
             this.Width = Width;
@@ -41,12 +43,23 @@ namespace AngryBirdsLidl
             Task.Run(() => CheckColisions());
 
             List<Task> toMove = new List<Task>();
+            List<Ball> toDelte = new List<Ball>();
             foreach (var item in balls)
             {
+                if (deleteAfterCollision&&!item.IsAlive)
+                {
+                    toDelte.Add(item);
+                    continue;
+                }
+
                 if (item.IsAlive)
                 {
                     toMove.Add(item.Move()); 
-                } 
+                }
+            }
+            foreach (var item in toDelte)
+            {
+                balls.Remove(item);
             }
             Task.WhenAll(toMove);
         }

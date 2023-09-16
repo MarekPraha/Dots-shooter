@@ -92,5 +92,10 @@ namespace AngryBirdsLidl
         {
             this.gameLogic.friendlyFire = this.friendlyFirecheckBox.Checked;
         }
+
+        private void DelBallAfterColisionCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -66,8 +66,8 @@ namespace AngryBirdsLidl
                 return new RectangleF((float)this.X, (float)this.Y, this.Size, this.Size);
             }
             return RectangleF.Empty;
-
-
+            
+           
         }
     }
 }

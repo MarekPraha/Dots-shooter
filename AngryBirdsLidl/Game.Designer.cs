@@ -36,6 +36,7 @@
             stopButton = new Button();
             timer2 = new System.Windows.Forms.Timer(components);
             friendlyFirecheckBox = new CheckBox();
+            DelBallAfterCollisionCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -110,11 +111,25 @@
             friendlyFirecheckBox.UseVisualStyleBackColor = true;
             friendlyFirecheckBox.CheckedChanged += friendlyFirecheckBox_CheckedChanged;
             // 
+            // DelBallAfterCollisionCheckBox
+            // 
+            DelBallAfterCollisionCheckBox.AutoSize = true;
+            DelBallAfterCollisionCheckBox.Checked = true;
+            DelBallAfterCollisionCheckBox.CheckState = CheckState.Checked;
+            DelBallAfterCollisionCheckBox.Location = new Point(1014, 904);
+            DelBallAfterCollisionCheckBox.Name = "DelBallAfterCollisionCheckBox";
+            DelBallAfterCollisionCheckBox.Size = new Size(239, 29);
+            DelBallAfterCollisionCheckBox.TabIndex = 5;
+            DelBallAfterCollisionCheckBox.Text = "Delete balls after collision";
+            DelBallAfterCollisionCheckBox.UseVisualStyleBackColor = true;
+            DelBallAfterCollisionCheckBox.CheckedChanged += DelBallAfterColisionCheckBox_CheckedChanged;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 945);
+            Controls.Add(DelBallAfterCollisionCheckBox);
             Controls.Add(friendlyFirecheckBox);
             Controls.Add(stopButton);
             Controls.Add(startButton);
@@ -136,5 +151,6 @@
         private Button stopButton;
         private System.Windows.Forms.Timer timer2;
         private CheckBox friendlyFirecheckBox;
+        private CheckBox DelBallAfterCollisionCheckBox;
     }
 }
