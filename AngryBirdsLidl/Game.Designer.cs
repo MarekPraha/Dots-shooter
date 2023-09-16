@@ -113,6 +113,7 @@
             // 
             // DelBallAfterCollisionCheckBox
             // 
+            DelBallAfterCollisionCheckBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DelBallAfterCollisionCheckBox.AutoSize = true;
             DelBallAfterCollisionCheckBox.Checked = true;
             DelBallAfterCollisionCheckBox.CheckState = CheckState.Checked;

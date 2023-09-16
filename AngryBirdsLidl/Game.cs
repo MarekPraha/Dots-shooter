@@ -95,7 +95,7 @@ namespace AngryBirdsLidl
 
         private void DelBallAfterColisionCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            this.gameLogic.deleteAfterCollision = this.DelBallAfterCollisionCheckBox.Checked;
         }
     }
 }
