@@ -79,6 +79,10 @@ namespace AngryBirdsLidl
 
         private void pictureBox1_Resize(object sender, EventArgs e)
         {
+            if (this.gameLogic ==null)
+            {
+                return;
+            }
             this.gameLogic.Width = this.pictureBox1.Width;
             this.gameLogic.Height = this.pictureBox1.Height;
         }
