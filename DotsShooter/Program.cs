@@ -1,4 +1,4 @@
-namespace AngryBirdsLidl
+namespace DotsShooter
 {
     internal static class Program
     {

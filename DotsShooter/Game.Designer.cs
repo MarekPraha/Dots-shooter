@@ -1,4 +1,4 @@
-﻿namespace AngryBirdsLidl
+﻿namespace DotsShooter
 {
     partial class Game
     {
@@ -43,9 +43,10 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(8, 7);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1375, 881);
+            pictureBox1.Size = new Size(962, 529);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Paint += pictureBox1_Paint;
@@ -61,9 +62,10 @@
             // resetButton
             // 
             resetButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            resetButton.Location = new Point(248, 899);
+            resetButton.Location = new Point(174, 539);
+            resetButton.Margin = new Padding(2, 2, 2, 2);
             resetButton.Name = "resetButton";
-            resetButton.Size = new Size(112, 34);
+            resetButton.Size = new Size(78, 20);
             resetButton.TabIndex = 1;
             resetButton.Text = "Reset";
             resetButton.UseVisualStyleBackColor = true;
@@ -72,9 +74,10 @@
             // startButton
             // 
             startButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            startButton.Location = new Point(12, 899);
+            startButton.Location = new Point(8, 539);
+            startButton.Margin = new Padding(2, 2, 2, 2);
             startButton.Name = "startButton";
-            startButton.Size = new Size(112, 34);
+            startButton.Size = new Size(78, 20);
             startButton.TabIndex = 2;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             // stopButton
             // 
             stopButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            stopButton.Location = new Point(130, 899);
+            stopButton.Location = new Point(91, 539);
+            stopButton.Margin = new Padding(2, 2, 2, 2);
             stopButton.Name = "stopButton";
-            stopButton.Size = new Size(112, 34);
+            stopButton.Size = new Size(78, 20);
             stopButton.TabIndex = 3;
             stopButton.Text = "Stop";
             stopButton.UseVisualStyleBackColor = true;
@@ -103,9 +107,10 @@
             friendlyFirecheckBox.AutoSize = true;
             friendlyFirecheckBox.Checked = true;
             friendlyFirecheckBox.CheckState = CheckState.Checked;
-            friendlyFirecheckBox.Location = new Point(1259, 904);
+            friendlyFirecheckBox.Location = new Point(884, 540);
+            friendlyFirecheckBox.Margin = new Padding(2, 2, 2, 2);
             friendlyFirecheckBox.Name = "friendlyFirecheckBox";
-            friendlyFirecheckBox.Size = new Size(128, 29);
+            friendlyFirecheckBox.Size = new Size(87, 19);
             friendlyFirecheckBox.TabIndex = 4;
             friendlyFirecheckBox.Text = "FriendlyFire";
             friendlyFirecheckBox.UseVisualStyleBackColor = true;
@@ -117,9 +122,10 @@
             DelBallAfterCollisionCheckBox.AutoSize = true;
             DelBallAfterCollisionCheckBox.Checked = true;
             DelBallAfterCollisionCheckBox.CheckState = CheckState.Checked;
-            DelBallAfterCollisionCheckBox.Location = new Point(1014, 904);
+            DelBallAfterCollisionCheckBox.Location = new Point(717, 540);
+            DelBallAfterCollisionCheckBox.Margin = new Padding(2, 2, 2, 2);
             DelBallAfterCollisionCheckBox.Name = "DelBallAfterCollisionCheckBox";
-            DelBallAfterCollisionCheckBox.Size = new Size(239, 29);
+            DelBallAfterCollisionCheckBox.Size = new Size(160, 19);
             DelBallAfterCollisionCheckBox.TabIndex = 5;
             DelBallAfterCollisionCheckBox.Text = "Delete balls after collision";
             DelBallAfterCollisionCheckBox.UseVisualStyleBackColor = true;
@@ -127,17 +133,18 @@
             // 
             // Game
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1399, 945);
+            ClientSize = new Size(979, 567);
             Controls.Add(DelBallAfterCollisionCheckBox);
             Controls.Add(friendlyFirecheckBox);
             Controls.Add(stopButton);
             Controls.Add(startButton);
             Controls.Add(resetButton);
             Controls.Add(pictureBox1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Game";
-            Text = "Form1";
+            Text = "DotsShooter";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
