@@ -1,4 +1,4 @@
-namespace AngryBirdsLidl
+namespace DotsShooter
 {
     public partial class Game : Form
     {
